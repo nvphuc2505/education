@@ -1,0 +1,2 @@
+CREATE DATABASE words_db;
+CREATE DATABASE quizzes_db;

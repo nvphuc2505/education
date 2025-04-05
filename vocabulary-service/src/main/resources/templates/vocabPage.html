@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+  </head>
+
+  <body>
+  <h1>Danh sách từ vựng</h1>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Từ vựng</th>
+        <th>Loại từ</th>
+        <th>Phiên âm</th>
+        <th>Dịch nghĩa</th>
+        <th>Ví dụ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="vocab : ${vocabs}">
+        <td th:text="${vocab.word}">Từ vựng</td>
+        <td th:text="${vocab.wordType}">Loại từ</td>
+        <td th:text="${vocab.pronunciation}">Phiên âm</td>
+        <td th:text="${vocab.meaning}">Dịch nghĩa</td>
+        <td th:text="${vocab.example}">Ví dụ</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

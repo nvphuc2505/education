@@ -1,0 +1,36 @@
+server:
+  port: 9002
+  shutdown: graceful
+  netty:
+    connection-timeout: 2s
+    idle-timeout: 15s
+    #   connection-timeout: a period time to connect with other service
+    # This process will be cancelled if after 2 seconds the connection is not established
+    #   idle-timeout: a period time to allow an inactive connection
+    # If the connection is "idle" for more than 15 seconds, it will be closed to avoid taking up unnecessary resources.
+
+
+
+
+spring:
+  application:
+    name: quiz-service
+  r2dbc:
+    username: user
+    password: password
+    url: r2dbc:postgresql://localhost:5432/quizzes_db
+    pool:
+      max-create-connection-timeout: 2s
+      initial-size: 5
+      max-size: 10
+  flyway: # Using flyway to manage database schemas
+    user: ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+    url: jdbc:postgresql://localhost:5432/quizzes_db
+
+
+
+
+# Configuration Properties
+vocabulary:
+  vocabulary_service_uri: "http://localhost:9001"
