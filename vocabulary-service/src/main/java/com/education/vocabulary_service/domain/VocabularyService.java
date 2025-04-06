@@ -17,14 +17,13 @@ public class VocabularyService {
         return vocabularyRepository.findAll();
     }
 
-    /*
-    public Vocabulary findByTopic(String topic) {
-        return vocabularyRepository.findByTopic(topic)
-                                .orElseThrow(
-                                        () -> new VocabularyNotFoundException(topic)
-                                );
+    public Iterable<Vocabulary> findByTopic(String topic) {
+
+        if (!vocabularyRepository.existsByTopic(topic))
+            throw new VocabularyNotFoundException(topic);
+
+        return vocabularyRepository.findByTopic(topic);
     }
-     */
 
     public Vocabulary findByWord(String word) {
         return vocabularyRepository

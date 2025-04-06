@@ -3,7 +3,7 @@ package com.education.vocabulary_service.domain;
 public class VocabularyNotFoundException
         extends RuntimeException {
 
-  public VocabularyNotFoundException(String topic) {
-      super("The vocabulary with topic " + topic + " was not found.");
+  public VocabularyNotFoundException(String content) {
+      super("The vocabulary with " + content + " was not found.");
   }
 }

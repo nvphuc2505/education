@@ -42,6 +42,7 @@ public class VocabController {
     @GetMapping("/{word}")
     public Vocabulary findByWord(@PathVariable String word) {
         return vocabularyService.findByWord(word);
+
     }
 
     @PostMapping
