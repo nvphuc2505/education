@@ -14,7 +14,7 @@ import java.time.Instant;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "vocabulary")
+@Table(name = "vocabularies")
 public class Vocabulary {
 
     @Id
@@ -26,13 +26,17 @@ public class Vocabulary {
     @NotBlank(message = "The word must be defined.")
     private String word;
 
-    private String wordType;
+    @NotBlank(message = "The level must be defined.")
+    private String level;
+
+    @NotBlank(message = "The type must be defined.")
+    private String type;
 
     @NotBlank(message = "The pronunciation must be defined.")
     private String pronunciation;
 
-    @NotBlank(message = "The meaning must be defined.")
-    private String meaning;
+    @NotBlank(message = "The definition must be defined.")
+    private String definition;
 
     @NotBlank(message = "The example must be defined.")
     private String example;
@@ -43,9 +47,9 @@ public class Vocabulary {
     @LastModifiedDate
     private Instant lastModifiedDate;
 
-    public static Vocabulary of(String topic, String word, String wordType,
+    public static Vocabulary of(String topic, String word, String level, String wordType,
                                 String pronunciation, String meaning, String example) {
-        return new Vocabulary(null, topic, word, wordType,
+        return new Vocabulary(null, topic, word, level, wordType,
                     pronunciation, meaning, example,
                     null, null);
     }

@@ -1,13 +1,14 @@
-CREATE TABLE vocabulary (
+CREATE TABLE vocabularies (
 
     id                  BIGSERIAL PRIMARY KEY NOT NULL,
     topic               VARCHAR(255) NOT NULL,
     word                VARCHAR(255) NOT NULL,
-    word_type           VARCHAR(255) NOT NULL,
+    level               VARCHAR(255) NOT NULL,
+    type                VARCHAR(255) NOT NULL,
     pronunciation       VARCHAR(255) NOT NULL,
-    meaning             VARCHAR(255) NOT NULL,
-    example             VARCHAR(255) NOT NULL,
-    created_date        TIMESTAMP,
-    last_modified_date  TIMESTAMP
+    definition          TEXT NOT NULL,
+    example             TEXT NOT NULL,
+    created_date            VARCHAR(255),
+    last_modified_date      VARCHAR(255)
 
 );

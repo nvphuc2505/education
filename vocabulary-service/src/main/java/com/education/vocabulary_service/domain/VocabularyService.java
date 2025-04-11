@@ -3,6 +3,8 @@ package com.education.vocabulary_service.domain;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class VocabularyService {
 
@@ -13,6 +15,9 @@ public class VocabularyService {
         this.vocabularyRepository = vocabularyRepository;
     }
 
+
+
+    // GET
     public Iterable<Vocabulary> findAll() {
         return vocabularyRepository.findAll();
     }
@@ -33,7 +38,40 @@ public class VocabularyService {
                     );
     }
 
+    public Iterable<Vocabulary> findByLevel(String level) {
+
+        if(!vocabularyRepository.existsByLevel(level))
+            throw new VocabularyNotFoundException(level);
+
+        return vocabularyRepository.findByLevel(level);
+    }
+
+
+
+    // POST
     public Vocabulary save(Vocabulary vocabulary) {
+
+        vocabularyRepository.findAll().forEach(
+            vocab -> {
+                if (Objects.equals(vocabulary.getWord(), vocab.getWord()) &&
+                        Objects.equals(vocabulary.getType(), vocab.getType()))
+                    throw new VocabularyAlreadyExistsException(vocabulary.getWord());
+            }
+        );
+
         return vocabularyRepository.save(vocabulary);
+    }
+
+
+
+    // DELETE
+    public Vocabulary deleteById(Long id) {
+
+        Vocabulary vocabulary = vocabularyRepository.findById(id).orElse(null);
+
+        if(vocabulary != null)
+            vocabularyRepository.deleteById(id);
+
+        return vocabulary;
     }
 }

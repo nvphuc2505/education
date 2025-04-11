@@ -4,11 +4,10 @@ import com.education.vocabulary_service.domain.Vocabulary;
 import com.education.vocabulary_service.domain.VocabularyService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/vocabulary")
+@RequestMapping("/api/v1/vocab")
 public class VocabController {
 
     private final VocabularyService vocabularyService;
@@ -18,35 +17,40 @@ public class VocabController {
         this.vocabularyService = vocabularyService;
     }
 
+
+
     @GetMapping
     public Iterable<Vocabulary> findAll() {
         return vocabularyService.findAll();
     }
 
-    /*
-    @GetMapping("/page")
-    public String vocabularyPage(Model model) {
-        Iterable<Vocabulary> vocabs = vocabularyService.findAll();
-        model.addAttribute("vocabs", vocabs);
-        return "vocabPage";
-    }
-     */
-
-    /*
-    @GetMapping("/{topic}")
-    public Vocabulary findByTopic(@PathVariable String topic) {
+    @GetMapping("/topic/{topic}")
+    public Iterable<Vocabulary> findByTopic(@PathVariable String topic) {
         return vocabularyService.findByTopic(topic);
     }
-     */
 
-    @GetMapping("/{word}")
+    @GetMapping("/search/{word}")
     public Vocabulary findByWord(@PathVariable String word) {
         return vocabularyService.findByWord(word);
 
     }
 
+    @GetMapping("/level/{level}")
+    public Iterable<Vocabulary> findByLevel(@PathVariable String level) {
+        return vocabularyService.findByLevel(level);
+    }
+
+
+
     @PostMapping
     public Vocabulary submit(@Valid @RequestBody Vocabulary vocabulary) {
         return vocabularyService.save(vocabulary);
+    }
+
+
+
+    @DeleteMapping("/delete/{id}")
+    public Vocabulary delete (@PathVariable Long id) {
+        return vocabularyService.deleteById(id);
     }
 }

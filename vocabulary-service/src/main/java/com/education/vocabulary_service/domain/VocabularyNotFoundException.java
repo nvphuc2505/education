@@ -6,4 +6,5 @@ public class VocabularyNotFoundException
   public VocabularyNotFoundException(String content) {
       super("The vocabulary with " + content + " was not found.");
   }
+
 }

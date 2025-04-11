@@ -1,7 +1,8 @@
-INSERT INTO vocabulary (topic, word, word_type, pronunciation, meaning, example)
+INSERT INTO vocabularies (topic, word, level, type, pronunciation, definition, example)
 VALUES
     ('LEISURE AND RECREATION',
     'football',
+    'A1',
     'noun',
     '/ˈfʊtbɔːl/',
     'a game played by two teams of 11 players, using a round ball that players kick up and down the playing field. Teams try to kick the ball into the other team’s goal.',
@@ -9,6 +10,7 @@ VALUES
 
     ('LEISURE AND RECREATION',
     'gym',
+    'A1',
     'noun',
     '/dʒɪm/',
     'a room or hall with equipment for doing physical exercise, for example in a school',
@@ -16,6 +18,7 @@ VALUES
 
     ('LEISURE AND RECREATION',
     'hiking',
+    'A1',
     'noun',
     '/ˈhaɪkɪŋ/',
     'the activity of going for long walks in the country for pleasure',
@@ -23,6 +26,7 @@ VALUES
 
     ('LEISURE AND RECREATION',
     'reading',
+    'A1',
     'noun',
     '/ˈriːdɪŋ/',
     'the activity of somebody who reads',
@@ -30,6 +34,7 @@ VALUES
 
     ('LEISURE AND RECREATION',
     'cooking',
+    'A1',
     'noun',
     '/ˈkʊkɪŋ/',
     'the process of preparing food by heating it',

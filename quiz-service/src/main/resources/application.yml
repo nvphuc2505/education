@@ -4,9 +4,9 @@ server:
   netty:
     connection-timeout: 2s
     idle-timeout: 15s
-    #   connection-timeout: a period time to connect with other service
+    #   -- connection-timeout: a period time to connect with other service
     # This process will be cancelled if after 2 seconds the connection is not established
-    #   idle-timeout: a period time to allow an inactive connection
+    #   -- idle-timeout: a period time to allow an inactive connection
     # If the connection is "idle" for more than 15 seconds, it will be closed to avoid taking up unnecessary resources.
 
 
@@ -27,6 +27,12 @@ spring:
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
     url: jdbc:postgresql://localhost:5432/quizzes_db
+  #rabbitmq:
+  #  host: localhost
+  #  port: 5672
+  #  username: user
+  #  password: password
+  #  connection-timeout: 5s
 
 
 

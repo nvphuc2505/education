@@ -29,6 +29,7 @@ public class VocabDataLoader {
         Vocabulary football = Vocabulary.of("Leisure and Recreation",
                 "Football",
                 "noun",
+                "A1",
                 "/ˈfʊtbɔːl/",
                 "Bóng đá",
                 "The kids were outside playing football.");
@@ -36,6 +37,7 @@ public class VocabDataLoader {
         Vocabulary gym = Vocabulary.of("Leisure and Recreation",
                 "Gym",
                 "noun",
+                "A1",
                 "/dʒɪm/",
                 "Phòng tập thể dục",
                 "The school has recently built a new gym.");
@@ -43,6 +45,7 @@ public class VocabDataLoader {
         Vocabulary hiking = Vocabulary.of("Leisure and Recreation",
                 "Hiking",
                 "noun",
+                "A1",
                 "/ˈhaɪkɪŋ/",
                 "Leo núi",
                 "He loves hiking.");
@@ -50,6 +53,7 @@ public class VocabDataLoader {
         Vocabulary reading = Vocabulary.of("Leisure and Recreation",
                 "Reading",
                 "noun",
+                "A1",
                 "/ˈriːdɪŋ/",
                 "Đọc sách",
                 "My hobbies include reading and painting.");

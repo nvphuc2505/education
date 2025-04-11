@@ -11,6 +11,9 @@ public interface VocabularyRepository
     boolean existsByTopic(String topic);
 
     Optional<Vocabulary> findByWord(String word);
-    boolean existsByWord(String word);
+    // boolean existsByWord(String word);
+
+    Iterable<Vocabulary> findByLevel(String level);
+    boolean existsByLevel(String level);
 
 }
