@@ -5,7 +5,7 @@ VALUES
     'A1',
     'noun',
     '/ˈfʊtbɔːl/',
-    'a game played by two teams of 11 players, using a round ball that players kick up and down the playing field. Teams try to kick the ball into the other team’s goal.',
+    'Đá bóng',
     'The kids were outside playing football.'),
 
     ('LEISURE AND RECREATION',
@@ -13,7 +13,7 @@ VALUES
     'A1',
     'noun',
     '/dʒɪm/',
-    'a room or hall with equipment for doing physical exercise, for example in a school',
+    'Phòng tập thể dục',
     'The school has recently built a new gym.'),
 
     ('LEISURE AND RECREATION',
@@ -21,7 +21,7 @@ VALUES
     'A1',
     'noun',
     '/ˈhaɪkɪŋ/',
-    'the activity of going for long walks in the country for pleasure',
+    'Đi bộ đường dài',
     'He loves hiking.'),
 
     ('LEISURE AND RECREATION',
@@ -29,7 +29,7 @@ VALUES
     'A1',
     'noun',
     '/ˈriːdɪŋ/',
-    'the activity of somebody who reads',
+    'Đọc sách',
     'My hobbies include reading and painting.'),
 
     ('LEISURE AND RECREATION',
@@ -37,5 +37,5 @@ VALUES
     'A1',
     'noun',
     '/ˈkʊkɪŋ/',
-    'the process of preparing food by heating it',
+    'Nấu ăn',
     'My husband does all the cooking.');

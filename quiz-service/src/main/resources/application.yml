@@ -27,6 +27,11 @@ spring:
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
     url: jdbc:postgresql://localhost:5432/quizzes_db
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/Education
   #rabbitmq:
   #  host: localhost
   #  port: 5672

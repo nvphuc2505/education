@@ -14,12 +14,15 @@ spring:
       default-filters:
         - SaveSession
         - TokenRelay
-      # vocabulary-service
       routes:
         - id: vocabulary-service
           uri: http://localhost:9001
           predicates:
             - Path=/api/v1/vocab/**
+        - id: quiz-service
+          uri: http://localhost:9002
+          predicates:
+            - Path=/api/v1/quizzes/**
   security:
     oauth2:
       client:

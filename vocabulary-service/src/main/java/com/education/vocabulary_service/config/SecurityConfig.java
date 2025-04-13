@@ -24,27 +24,20 @@ public class SecurityConfig {
                     authorize -> {
 
                         authorize
-                                /*
-                                .requestMatchers(HttpMethod.GET,
-                                        "/api/v1/vocab",
-                                        "/api/v1/vocab/topic/**",
-                                        "/api/v1/vocab/**")
-                                    .hasRole("student")
-                                 */
+                                //.requestMatchers(HttpMethod.GET,
+                                //        "/api/v1/vocab")
+                                //    .permitAll()
 
-                                .requestMatchers(HttpMethod.GET,
-                                        "/api/v1/vocab")
-                                    .permitAll()
+                                //.requestMatchers(HttpMethod.GET,
+                                //        "/api/v1/vocab/level/**")
+                                //    .hasRole("teacher")
 
-                                .requestMatchers(HttpMethod.GET,
-                                        "/api/v1/vocab/level/**")
-                                    .hasRole("teacher")
-
-                                .anyRequest().hasRole("student");
+                                //.anyRequest().hasRole("student");
+                                .anyRequest().permitAll();
                     }
                 )
-
                 .oauth2ResourceServer(
+                        // Check specific token & scope
                         oauth2 -> oauth2.jwt(
                                 jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter())
                         )
